@@ -23,7 +23,6 @@
     <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Data\partsJson.json" />
     <Content Remove="Data\partJson.json" />
   </ItemGroup>
 </Project>

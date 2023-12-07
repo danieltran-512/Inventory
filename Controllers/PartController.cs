@@ -39,7 +39,8 @@ namespace Inventory.Controllers
 
                 if(Item?.Find(i => i.ID == newPart.ID) != null)
                 {
-                    return BadRequest("Product ID already existed");
+                    
+                    return BadRequest(new { message = "Product ID already existed" });
                 }
 
                 Item?.Add(newPart);
