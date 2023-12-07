@@ -8,7 +8,7 @@ namespace Inventory.Controllers
     public class OrderController : ControllerBase
     {
         [HttpPost]
-        public IActionResult Order(List<Part> parts)
+        public IActionResult Post(List<Part> parts)
         {
             try
             {

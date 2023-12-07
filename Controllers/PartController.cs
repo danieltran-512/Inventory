@@ -9,7 +9,7 @@ namespace Inventory.Controllers
     public class PartController : ControllerBase
     {
         [HttpGet]
-        public IActionResult GetParts()
+        public IActionResult Get()
         {
             try
             {
@@ -27,7 +27,7 @@ namespace Inventory.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostParts(Part newPart)
+        public IActionResult Post(Part newPart)
         {
             try
             {
