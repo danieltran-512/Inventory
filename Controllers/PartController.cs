@@ -18,11 +18,13 @@ namespace Inventory.Controllers
              
                 ICollection<Part> Item = JsonConvert.DeserializeObject<ICollection<Part>>(Json);
 
+                Read.Close();
+
                 return Ok(Item);
             }
-            catch
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(new { message = ex.Message });
             }
         }
 
@@ -48,11 +50,13 @@ namespace Inventory.Controllers
                 using StreamWriter Write = new StreamWriter(UrlPath, false);
                 Write.WriteLine(JsonConvert.SerializeObject(Item));
 
+                Write.Close();
+
                 return Ok(newPart);
             }
-            catch
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(new { message = ex.Message });
             }
         }
     }

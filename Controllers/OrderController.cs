@@ -20,9 +20,9 @@ namespace Inventory.Controllers
 
                 return Ok(Order);
             }
-            catch
+            catch (Exception ex)
             {
-                return NotFound();
+                return NotFound(new { message = ex.Message });
             }
         }
     }
