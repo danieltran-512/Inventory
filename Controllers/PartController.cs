@@ -35,9 +35,11 @@ namespace Inventory.Controllers
             {
                 string UrlPath = "Data/partsJson.json";
 
-                using StreamReader Reader = new(UrlPath);
-                string Json = Reader.ReadToEnd();
+                using StreamReader Read = new(UrlPath);
+                string Json = Read.ReadToEnd();
                 List<Part> Item = JsonConvert.DeserializeObject<List<Part>>(Json);
+
+                Read.Close();
 
                 if(Item?.Find(i => i.ID == newPart.ID) != null)
                 {
