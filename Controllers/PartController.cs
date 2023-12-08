@@ -15,8 +15,7 @@ namespace Inventory.Controllers
             {
                 using StreamReader Read = new("Data/partsJson.json");
                 string Json = Read.ReadToEnd();
-             
-                ICollection<Part> Item = JsonConvert.DeserializeObject<ICollection<Part>>(Json);
+                ICollection<Part>? Item = JsonConvert.DeserializeObject<ICollection<Part>>(Json);
 
                 Read.Close();
 
@@ -37,7 +36,7 @@ namespace Inventory.Controllers
 
                 using StreamReader Read = new(UrlPath);
                 string Json = Read.ReadToEnd();
-                List<Part> Item = JsonConvert.DeserializeObject<List<Part>>(Json);
+                List<Part>? Item = JsonConvert.DeserializeObject<List<Part>>(Json);
 
                 Read.Close();
 
